@@ -1,9 +1,16 @@
 let Web3 =require("web3");
+let ethers =require("ethers");
+require("dotenv").config();
+const contractAddress = process.env.CONTRACT_ADDRESS;
+let chain_http = process.env.chain_http;
 
 let ABI = require("./abi.json");
-let contractAddress = "0x24defA07E71F3D0dB0647221A42f9e1208283850";// change it
+//let contractAddress = "0x88C63F1aB5372F96594072A8B3131Cf57B737005";// change it
 
-let web3 = new Web3(new Web3.providers.HttpProvider("HTTP://127.0.0.1:7545"));
+
+let web3 = new Web3(new Web3.providers.HttpProvider(chain_http));
+
+//let web3 = new Web3(new ethers.providers.JsonRpcProvider(chain_http));
 
 
 let contract = new web3.eth.Contract(ABI,contractAddress);

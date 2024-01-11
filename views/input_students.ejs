@@ -1,0 +1,19 @@
+<%-include("layout/header")%>
+<main>
+  <h1>Map student with school password</h1>
+  <form action="/input_students" method="post">
+    <div>
+      <label for="student_name">student_name: </label>
+      <input type="text" id="student_name" name="student_name" />
+    </div>
+    <br />
+    <div>
+      <label for="password">password: </label>
+      <input type="password" id="password" name="password" />
+    </div>
+    <br />
+    <button type="submit">Login</button>
+  </form>
+ 
+</main>
+<%-include("layout/footer")%>

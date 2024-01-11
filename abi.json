@@ -3,11 +3,126 @@
 		"inputs": [
 			{
 				"internalType": "string",
+				"name": "stu_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "school_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "pwrd",
+				"type": "string"
+			}
+		],
+		"name": "push_names",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "school_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "student_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "password",
+				"type": "string"
+			}
+		],
+		"name": "push_to_applied",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "user_email",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "privateKey",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "fileHash",
+				"type": "string"
+			}
+		],
+		"name": "putFileHash",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
 				"name": "user_email",
 				"type": "string"
 			}
 		],
 		"name": "removeUser",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "school_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "student_name",
+				"type": "string"
+			}
+		],
+		"name": "replace_from_applied_for_cert",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "school_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "password",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "addr",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "privateKey",
+				"type": "string"
+			}
+		],
+		"name": "saveSchool",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -67,6 +182,59 @@
 		"inputs": [
 			{
 				"internalType": "string",
+				"name": "schl_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "stu_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "pwrd",
+				"type": "string"
+			}
+		],
+		"name": "check_name",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "str1",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "str2",
+				"type": "string"
+			}
+		],
+		"name": "compare",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "pure",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
 				"name": "email",
 				"type": "string"
 			}
@@ -94,6 +262,21 @@
 						"internalType": "string",
 						"name": "privateKey",
 						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "fileHash",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "authenticFileHash",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "is_admin",
+						"type": "uint256"
 					}
 				],
 				"internalType": "struct userDB.userInfo",
@@ -132,6 +315,113 @@
 			{
 				"internalType": "string",
 				"name": "privateKey",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "fileHash",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "authenticFileHash",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "is_admin",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "subject",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "search",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "replacement",
+				"type": "string"
+			}
+		],
+		"name": "replace",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "result",
+				"type": "string"
+			}
+		],
+		"stateMutability": "pure",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "school_name",
+				"type": "string"
+			}
+		],
+		"name": "return_value_from_index",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"name": "schoolMembership",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "schoolName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "password",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "addr",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "privateKey",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "is_admin",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "applied_for_cert",
 				"type": "string"
 			}
 		],

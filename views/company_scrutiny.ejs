@@ -1,0 +1,19 @@
+<%-include("layout/header")%>
+<main>
+  <h1>Upload Page</h1>
+  <form action="/company/" method="post" enctype="multipart/form-data">
+    <div>
+        <label for="username">username: </label>
+        <input type="text" id="username" name="username" />
+      </div>
+      <br />
+    <div>
+      <label for="hash">File </label>
+      <input type="text" id="hash" name="hash" />
+    </div>
+    <br />
+    <button type="submit">UPLOAD</button>
+  </form>
+  
+</main>
+<%-include("layout/footer")%>
